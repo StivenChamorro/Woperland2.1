@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('avatar')->nullable(); //este campo alamcena la url de la imagen
             $table->enum('gender', ['male', 'female', 'other']);
             $table->integer('diamonds')->default(0);
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('about')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
